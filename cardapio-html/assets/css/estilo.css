@@ -30,6 +30,7 @@ header{
 header .brand{
     display: flex;
     align-items: center;
+    gap: 0.75rem;
 }
 header .brand img{
     height: 3rem;
@@ -54,7 +55,7 @@ header .cart-buttom{
     justify-content: center;
     border-radius: 0.75rem;
 }
-header .cart-buttom{
+header .cart-buttom img{
     width: 1.25rem;
     height: 1.25rem;
 }
