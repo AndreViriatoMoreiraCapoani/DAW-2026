@@ -1,5 +1,8 @@
 :root{
-    --text: #1c1917
+    --text: #1c1917;
+    --text-muted: #78716c;
+    --primary: #ea580c;
+    --bg: #fdfaf9;
 }
 header {
     background-color: #fcfcfc;
@@ -19,14 +22,31 @@ reset CSS
 body{
     font-family: 'Inter', sans-serif;
     color: var(--text);
-    background-color: #f3f2f2;
+    background-color: var(--bg);
 }
+
+.container{
+    width: min(100%, 1200px);
+    margin: auto;
+}
+
 /**********
 *cabeçalho*
 ***********/
 header{
-    background-color: ffffff;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+header .container,
+footer .container{
+    display: flex;
+    justify-content: space-between;
+
+}
+
 header .brand{
     display: flex;
     align-items: center;
@@ -44,7 +64,7 @@ header .brand h1{
 header .brand p{
     font-size: 0.8rem;
     margin-top: 2px;
-    color: #78716c
+    color: var(--text-muted);
 }
 header .cart-buttom{
     display: flex;
@@ -58,4 +78,55 @@ header .cart-buttom{
 header .cart-buttom img{
     width: 1.25rem;
     height: 1.25rem;
+}
+/****
+*NAV*
+*****/
+nav{
+    background-color: #ffffff;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    padding-block: 1rem;
+}
+
+nav ul li a{
+    border: 1px solid #e7e5e4;
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.725rem;
+    font-weight: 500;
+}
+
+nav ul li a.active{
+    border-color: var(--primary);
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+nav ul a:not(a.active):hover{
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/*******
+*FOOTER*
+********/
+footer{
+    background-color: var(--text-muted);
+    color: var(--bg);
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin-top: 2rem;
+    padding-block: 1.5rem;
+}
+footer .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
