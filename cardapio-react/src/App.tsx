@@ -8,12 +8,15 @@ import { ProductCard } from "./cases/products/components/product-card"
 import type { Product } from "./cases/products/dtos/product"
 
 
-
 function App() {
 
     const [activeCategory, setActiveCategory] = useState<string>(); 
 
-    const products = useProducts();
+    const { products, loading, error } = useProducts();
+
+    const visibleProducts = activeCategory === "todos"
+    ? products
+    : products.filter(product => product.category === activeCategory);
     
     function handleSelectCategory(alias: string) {
         setActiveCategory(alias);
@@ -35,7 +38,11 @@ function App() {
                 <p>Categoria <span id="select-category">Todos</span> - 10 itens</p>
             </header>
 
-            {products.map((product: Product) => (
+            {loading && (<p className="pane-loading">Carregando...</p>)}
+            {error && (<p className="pane-error">Erro ao carregar produtos</p>)}
+
+            {visibleProducts.map((product: Product) => (
+                
                 <ProductCard product={product} />
             ))}
 
