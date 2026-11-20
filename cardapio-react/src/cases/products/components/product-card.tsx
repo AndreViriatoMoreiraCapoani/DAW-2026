@@ -1,4 +1,4 @@
-import type { Product } from "../dtos/product";
+import type { Product } from "../dtos/Product";
 
 type ProductCardProps = {
     product: Product;
@@ -15,7 +15,7 @@ export function ProductCard({
             </figure>
             <h3>{product.name}</h3>
             <p>{product.description}</p>
-            <p>R$ {product.price.toFixed(2)}</p>
+            <p>R$ {product.price}</p>
             <button type="button">Adicionar</button>
         </article>
     )

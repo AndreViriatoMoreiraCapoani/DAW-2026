@@ -1,5 +1,5 @@
 import { ProductService } from "../services/product-service";
-import type {Product} from "../dtos/product";
+import type {Product} from "../dtos/Product";
 import { useState, useEffect } from "react";
 
 export function useProducts() {

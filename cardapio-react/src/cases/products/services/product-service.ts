@@ -1,4 +1,4 @@
-import type { Product } from '../dtos/product';
+import type { Product } from '../dtos/Product';
 import { Api } from '../../../lib/axios';
 const ENDPOINT = '/Products?key=f35cac90';
 

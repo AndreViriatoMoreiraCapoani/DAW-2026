@@ -5,7 +5,7 @@ import { NavigationBar } from "./components/layout/navigation"
 import { categories } from "./data/categories"
 import { useProducts } from "./cases/products/hooks/use-product"
 import { ProductCard } from "./cases/products/components/product-card"
-import type { Product } from "./cases/products/dtos/product"
+import type { Product } from "./cases/products/dtos/Product"
 
 
 function App() {
@@ -47,6 +47,10 @@ function App() {
             ))}
 
         </section>
+
+        {products.map((product: Product) => (
+            <ProductCard product={product} />
+        ))}
 
         <aside>
          <h2>Seu Pedido</h2>
